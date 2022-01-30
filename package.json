@@ -6,9 +6,12 @@
   "author": "Lucas Mesquita <lucasoliveira98@outlook.com>",
   "license": "MIT",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.config.js --open --env development",
-    "build": "webpack --config webpack.config.js --env production"
+    "dev": "lerna run --scope @mfe/* --parallel dev",
+    "build": "lerna run --scope @mfe/* --parallel build"
   },
   "devDependencies": {
     "@babel/core": "^7.16.12",
@@ -16,24 +19,21 @@
     "@babel/preset-react": "^7.16.7",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
-    "eslint": "^8.2.0",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "html-webpack-plugin": "^5.5.0",
+    "lerna": "^4.0.0",
     "mini-css-extract-plugin": "^2.5.3",
     "prettier": "^2.5.1",
     "style-loader": "^3.3.1",
     "webpack": "^5.67.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.3"
-  },
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet-async": "^1.2.2"
   }
 }
