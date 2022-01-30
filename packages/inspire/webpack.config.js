@@ -50,20 +50,25 @@ module.exports = env => {
         template: path.resolve('src', 'index.html'),
       }),
       new ModuleFederationPlugin({
-        name: 'shell',
+        name: 'inspire',
         filename: 'remoteEntry.js',
         // exposes modules (file) that should be made available to other bundles
+        exposes: {
+          './RelatedProducts': path.resolve(
+            'src',
+            'components',
+            'RelatedProducts'
+          ),
+        },
         shared: {
           ...dependencies,
-        },
-        remotes: {
-          inspire: 'inspire@http://localhost:8081/remoteEntry.js',
         },
       }),
       ...(devMode ? [] : [new MiniCssExtractPlugin()]),
     ],
+
     devServer: {
-      port: 8080,
+      port: 8081,
       historyApiFallback: true,
       headers: {
         'Access-Control-Allow-Origin': '*',

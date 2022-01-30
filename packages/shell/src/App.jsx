@@ -1,6 +1,8 @@
 /* eslint-disable global-require */
 import { Helmet } from 'react-helmet-async';
 import './page.css';
+// eslint-disable-next-line import/no-unresolved
+import { RelatedProducts } from 'inspire/RelatedProducts';
 
 export function App() {
   return (
@@ -51,12 +53,7 @@ export function App() {
         <button id="buy" type="button">
           buy for 66,00 €
         </button>
-        <div id="reco">
-          <h3>Related Products</h3>
-          <img src={require('./images/reco_3.jpg')} alt="Reco 3" />
-          <img src={require('./images/reco_5.jpg')} alt="Reco 5" />
-          <img src={require('./images/reco_6.jpg')} alt="Reco 6" />
-        </div>
+        <RelatedProducts />
       </main>
     </>
   );
