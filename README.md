@@ -12,7 +12,7 @@ Requirements:
 
 ## Installation
 ```bash
+  git checkout feat/migrate-to-react
   yarn
   yarn dev
 ```
-    
