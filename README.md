@@ -3,16 +3,6 @@
 
 A simple project using Webpack and Module Federation to create an horizontal-composed micro-frontend.
 
-
-## Deploy
-
-Para fazer o deploy desse projeto rode
-
-```bash
-  npm run deploy
-```
-
-
 ## Requirements
 
 Requirements:
