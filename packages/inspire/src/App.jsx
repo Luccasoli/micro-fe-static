@@ -2,7 +2,12 @@
 import { RelatedProducts } from './components/RelatedProducts';
 
 export function App() {
-  return <RelatedProducts />;
+  return (
+    <>
+      <h1>Related products</h1>
+      <RelatedProducts />
+    </>
+  );
 }
 
 export default App;
