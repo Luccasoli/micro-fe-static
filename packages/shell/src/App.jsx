@@ -1,8 +1,12 @@
 /* eslint-disable global-require */
 import { Helmet } from 'react-helmet-async';
 import './page.css';
+// import { RelatedProducts } from 'inspire/RelatedProducts';
+import { lazy, Suspense } from 'react';
+import ErrorHandler from './utils/ErrorHandler';
+
 // eslint-disable-next-line import/no-unresolved
-import { RelatedProducts } from 'inspire/RelatedProducts';
+const RelatedProducts = lazy(() => import('inspire/RelatedProducts'));
 
 export function App() {
   return (
@@ -53,7 +57,11 @@ export function App() {
         <button id="buy" type="button">
           buy for 66,00 €
         </button>
-        <RelatedProducts />
+        <ErrorHandler>
+          <Suspense fallback={<div>Loading...</div>}>
+            <RelatedProducts />
+          </Suspense>
+        </ErrorHandler>
       </main>
     </>
   );
